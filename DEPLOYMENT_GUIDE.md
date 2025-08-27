@@ -121,7 +121,7 @@ Create `/etc/nginx/sites-available/storesa2z-early-access`:
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com www.your-domain.com;
+    server_name early-access.storessa2z.com www.early-access.storessa2z.com;
 
     # Security headers
     add_header X-Frame-Options "SAMEORIGIN" always;
