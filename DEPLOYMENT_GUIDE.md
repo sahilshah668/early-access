@@ -92,7 +92,7 @@ module.exports = {
     max_memory_restart: '1G',
     env: {
       NODE_ENV: 'production',
-      PORT: 3000
+      PORT: 6969
     }
   }]
 }
@@ -139,7 +139,7 @@ server {
 
     # Proxy to Node.js app
     location / {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:6969;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -152,20 +152,20 @@ server {
 
     # Static files caching
     location /_next/static/ {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:6969;
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
 
     # Favicon and manifest
     location = /favicon.ico {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:6969;
         expires 1y;
         add_header Cache-Control "public";
     }
 
     location = /site.webmanifest {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:6969;
         expires 1y;
         add_header Cache-Control "public";
     }
@@ -320,7 +320,7 @@ module.exports = {
     env_file: '.env.local',
     env: {
       NODE_ENV: 'production',
-      PORT: 3000
+      PORT: 6969
     }
   }]
 }
@@ -430,9 +430,9 @@ Set up GitHub Actions or cron jobs for automatic deployments.
 
 ### **Common Issues:**
 
-1. **Port 3000 already in use:**
+1. **Port 6969 already in use:**
    ```bash
-   sudo lsof -i :3000
+   sudo lsof -i :6969
    sudo kill -9 <PID>
    ```
 
