@@ -78,8 +78,8 @@ export default function Home() {
               </a>
               <a 
                 href="https://forms.gle/vpAtxGh6nWL6MCx48" 
-                target="_blank" 
-                rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium"
               >
                 Apply Now
@@ -129,16 +129,16 @@ export default function Home() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Limited Spots
-                </a>
-                <a 
+          </a>
+          <a
                   href="https://forms.gle/vpAtxGh6nWL6MCx48" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium text-center"
                   onClick={() => setIsMenuOpen(false)}
-                >
+          >
                   Apply Now
-                </a>
+          </a>
               </div>
             </motion.div>
           )}
@@ -213,8 +213,8 @@ export default function Home() {
             >
               <a 
                 href="https://forms.gle/vpAtxGh6nWL6MCx48" 
-                target="_blank" 
-                rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg rounded-xl hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Apply for Early Partner Access
@@ -865,8 +865,8 @@ export default function Home() {
             </p>
             <a 
               href="https://forms.gle/vpAtxGh6nWL6MCx48" 
-              target="_blank" 
-              rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg rounded-xl hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Apply Now
@@ -890,8 +890,8 @@ export default function Home() {
             <div className="flex items-center gap-6">
               <a 
                 href="https://linkedin.com/company/storesa2z" 
-                target="_blank" 
-                rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                 className="text-slate-600 hover:text-blue-600 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
