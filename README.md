@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StoresA2Z Early Partner Access
 
-## Getting Started
+A stunning one-page Next.js website for the StoresA2Z Early Partner Access program. Built with modern web technologies and designed to convert agencies into early partners.
 
-First, run the development server:
+## 🚀 Features
+
+- **Premium Design**: Apple/Notion/Linear-inspired aesthetic
+- **Smooth Animations**: Framer Motion powered interactions
+- **Mobile-First**: Fully responsive design
+- **SEO Optimized**: Complete meta tags and Open Graph support
+- **Performance**: Optimized for speed and accessibility
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: TailwindCSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Fonts**: Inter (Google Fonts)
+- **TypeScript**: Full type safety
+
+## 📦 Installation
 
 ```bash
+# Clone the repository
+git clone <repository-url>
+cd storesa2z-early-access
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Colors
+- **Primary**: Blue gradient (#2563eb to #7c3aed)
+- **Text**: Slate gray scale
+- **Background**: Subtle gradients and white space
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Typography
+- **Font**: Inter (Google Fonts)
+- **Headings**: Bold, large scale
+- **Body**: Clean, readable
 
-## Learn More
+### Components
+- **Buttons**: Rounded corners, hover effects
+- **Cards**: Glass morphism effects
+- **Animations**: Staggered fade-ins and smooth transitions
 
-To learn more about Next.js, take a look at the following resources:
+## 📱 Sections
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Hero**: Bold headline with clear value proposition
+2. **Benefits**: Three key advantages with icons
+3. **Target Audience**: Clear definition of ideal partners
+4. **Scarcity**: Limited spots with progress visualization
+5. **CTA**: Final call-to-action
+6. **Footer**: Brand info and social links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 Configuration
 
-## Deploy on Vercel
+### Environment Variables
+Create a `.env.local` file:
+```env
+NEXT_PUBLIC_SITE_URL=https://early-access.storesa2z.com
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Meta Tags
+Update the meta tags in `src/app/layout.tsx` for your specific domain and social media handles.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Form Integration
+Replace the Google Form links in the CTA buttons with your actual form URL.
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+```bash
+npm run build
+# Deploy to Vercel
+```
+
+### Other Platforms
+```bash
+npm run build
+npm run start
+```
+
+## 📊 Analytics
+
+Consider adding Google Analytics or other tracking tools to monitor conversion rates and user behavior.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+This project is proprietary to StoresA2Z.
+
+---
+
+**Built with ❤️ for StoresA2Z Early Partner Access Program**
