@@ -28,6 +28,7 @@ import {
   User
 } from 'lucide-react';
 import { useState } from 'react';
+import Script from 'next/script';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,7 +48,102 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <>
+      {/* Structured Data for SEO */}
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "StoresA2Z",
+            "url": "https://storesa2z.com",
+            "logo": "https://early-access.storesa2z.com/logo.png",
+            "description": "Mobile commerce platform for digital agencies and partners",
+            "sameAs": [
+              "https://linkedin.com/company/storesa2z"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": "English"
+            }
+          })
+        }}
+      />
+      
+      <Script
+        id="program-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Program",
+            "name": "StoresA2Z Early Partner Access",
+            "description": "Early partner access program for digital agencies to offer mobile commerce solutions",
+            "provider": {
+              "@type": "Organization",
+              "name": "StoresA2Z"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "INR",
+              "availability": "LimitedAvailability",
+              "validFrom": "2024-01-01",
+              "validThrough": "2024-12-31"
+            },
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "Digital Agencies, Freelancers, E-commerce Consultants"
+            }
+          })
+        }}
+      />
+      
+      <Script
+        id="breadcrumb-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://early-access.storesa2z.com"
+              }
+            ]
+          })
+        }}
+      />
+      
+      <Script
+        id="webpage-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "StoresA2Z Early Partner Access",
+            "description": "Join StoresA2Z Early Partner Access for digital agencies. Earn ₹50,000-₹5,00,000 per mobile commerce client. Only 66 spots available.",
+            "url": "https://early-access.storesa2z.com",
+            "mainEntity": {
+              "@type": "Program",
+              "name": "StoresA2Z Early Partner Access"
+            },
+            "potentialAction": {
+              "@type": "ApplyAction",
+              "target": "https://forms.gle/vpAtxGh6nWL6MCx48"
+            }
+          })
+        }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -146,7 +242,8 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-16">
+      <main>
+        <section className="relative overflow-hidden pt-16" aria-labelledby="hero-heading">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
           <motion.div 
@@ -166,6 +263,7 @@ export default function Home() {
             </motion.div>
 
             <motion.h1 
+              id="hero-heading"
               className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent leading-tight mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -211,22 +309,23 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex justify-center"
             >
-              <a 
-                href="https://forms.gle/vpAtxGh6nWL6MCx48" 
-          target="_blank"
-          rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg rounded-xl hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Apply for Early Partner Access
-                <ArrowRight className="w-5 h-5" />
-              </a>
+                          <a 
+              href="https://forms.gle/vpAtxGh6nWL6MCx48" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg rounded-xl hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              aria-label="Apply for Early Partner Access - Opens in new tab"
+            >
+              Apply for Early Partner Access
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </a>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Visual Showcase */}
-      <section id="ecosystem" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
+      <section id="ecosystem" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900" aria-labelledby="ecosystem-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -235,7 +334,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h2 id="ecosystem-heading" className="text-4xl md:text-6xl font-bold text-white mb-6">
               Your Complete Mobile Commerce Business
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
@@ -420,7 +519,7 @@ export default function Home() {
       </section>
 
       {/* What You Can Do Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" aria-labelledby="capabilities-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -429,7 +528,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+            <h2 id="capabilities-heading" className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
               What You Can Do With Us
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -544,7 +643,7 @@ export default function Home() {
       </section>
 
       {/* Earnings Potential Section */}
-      <section id="benefits" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section id="benefits" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50" aria-labelledby="earnings-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -553,7 +652,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+            <h2 id="earnings-heading" className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
               Your Earnings Potential
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -620,7 +719,7 @@ export default function Home() {
       </section>
 
       {/* Business Model Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" aria-labelledby="how-it-works-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center"
@@ -629,7 +728,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+            <h2 id="how-it-works-heading" className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
               How It Works
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-12">
@@ -687,7 +786,7 @@ export default function Home() {
       </section>
 
       {/* Who This Is For Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50" aria-labelledby="target-audience-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -696,7 +795,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+            <h2 id="target-audience-heading" className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
               Who's This For?
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -802,7 +901,7 @@ export default function Home() {
       </section>
 
       {/* Scarcity Section */}
-      <section id="scarcity" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
+      <section id="scarcity" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900" aria-labelledby="scarcity-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center"
@@ -811,7 +910,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h2 id="scarcity-heading" className="text-4xl md:text-6xl font-bold text-white mb-6">
               Limited Spots
             </h2>
             <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
@@ -849,7 +948,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" aria-labelledby="final-cta-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -857,7 +956,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-8">
+            <h2 id="final-cta-heading" className="text-4xl md:text-6xl font-bold text-slate-900 mb-8">
               Ready to lead, not follow?
             </h2>
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
@@ -865,19 +964,22 @@ export default function Home() {
             </p>
             <a 
               href="https://forms.gle/vpAtxGh6nWL6MCx48" 
-          target="_blank"
-          rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg rounded-xl hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              aria-label="Apply Now - Opens in new tab"
             >
               Apply Now
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </a>
           </motion.div>
         </div>
       </section>
 
+        </main>
+
       {/* Footer */}
-      <footer className="py-12 bg-slate-50 border-t border-slate-200">
+      <footer className="py-12 bg-slate-50 border-t border-slate-200" role="contentinfo">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
@@ -890,11 +992,12 @@ export default function Home() {
             <div className="flex items-center gap-6">
               <a 
                 href="https://linkedin.com/company/storesa2z" 
-          target="_blank"
-          rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-slate-600 hover:text-blue-600 transition-colors"
+                aria-label="Visit StoresA2Z LinkedIn page - Opens in new tab"
               >
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-6 h-6" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -906,6 +1009,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
